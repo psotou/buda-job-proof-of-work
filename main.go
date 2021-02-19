@@ -28,8 +28,8 @@ func main() {
 		check = strings.Contains(hash, "b00da")
 	}
 
-	fmt.Println(testStrings)
-	fmt.Println(hash)
+	fmt.Printf("String     : %s\n", testStrings)
+	fmt.Printf("SHA256 hash: %s\n", hash)
 }
 
 // Generates a random string using
