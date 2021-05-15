@@ -10,13 +10,14 @@ import (
 )
 
 var alphaNumeric = []rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789")
+var (
+	check        bool
+	testStrings  string
+	hash         string
+	randSeqBytes []byte
+)
 
 func main() {
-	var check bool
-	var testStrings string
-	var hash string
-	var randSeqBytes []byte
-
 	// loops through the hash256 strings until it finds a match wioth b00da
 	for !check {
 		rand.Seed(time.Now().UnixNano())
@@ -32,7 +33,7 @@ func main() {
 	fmt.Printf("SHA256 hash: %s\n", hash)
 }
 
-// Generates a random string using
+// Generates a random string of length n
 func randSeq(n int) string {
 	b := make([]rune, n)
 	for i := range b {
